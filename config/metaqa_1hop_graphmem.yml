@@ -1,0 +1,49 @@
+name: 'metaqa_1hop_graphmem_v6.3'
+model: 'graphmem'
+dataset: 'metaqa_1hop'
+data_folder: 'datasets/metaqa_1hop/'
+kb_data: 'kb.txt'
+train_data: 'qa_train.txt'
+dev_data: 'qa_dev.txt'
+test_data: 'qa_test.txt'
+
+word2id: 'vocab.txt'
+relation2id: 'relations.txt'
+entity2id: 'entities.txt'
+word_emb_file: "word_emb_300d.npy"
+entity_emb_file: null
+entity_kge_file: "entity_kge_300d.npy"
+relation_emb_file: "relation_emb_300d.npy"
+relation_kge_file: "relation_kge_300d.npy"
+freebase_id_map_file: "fbid2name.txt"
+
+to_save_model: True
+save_model_file: "model_cache/metaqa_1hop/metaqa_1hop_graphmem_test_v6.3/best_model_kb"
+pred_file: "model_cache/metaqa_1hop/metaqa_1hop_graphmem_test_v6.3/pred_kb"
+load_model_file: "model_cache/metaqa_1hop/metaqa_1hop_graphmem_test_v6.3/best_model_kb"
+rank_file: "model_cache/metaqa_1hop/metaqa_1hop_graphmem_test_v6.3/rank.txt"
+
+# graph options
+fact_dropout: 0.0
+
+num_layer: 1
+max_query_word: 25
+
+entity_dim: 100
+word_dim: 300
+kge_dim: 300
+pagerank_lambda: 0.8
+fact_scale: 3
+use_inverse_relation: True
+
+# optimization
+num_epoch: 1000
+batch_size: 25
+test_batch_size: 25
+gradient_clip: 1
+learning_rate: 0.001
+lstm_dropout: 0.3
+linear_dropout: 0.2
+is_debug: False
+
+
